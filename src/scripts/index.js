@@ -1,4 +1,4 @@
-// Função para atualizar a página ao clicar no nome da marca
+
 function reloadPage() {
     const headerH1 = document.querySelector('.h1__header');
 
@@ -8,12 +8,12 @@ function reloadPage() {
 }
 reloadPage()
 
-// Função responsável por alterar o tema da página entre claro e escuro
+
 function changeMode() {
     const body = document.body;
     const svgs = document.querySelectorAll('.audio__div__div-2__div-3')
     if (body.classList.contains('dark-mode')) {
-        // Modo claro
+        
         document.documentElement.style.setProperty('--color-brand-1', '#9747ff;');
         document.documentElement.style.setProperty('--color-grey-0', '#15171a');
         document.documentElement.style.setProperty('--color-grey-1', '#212529');
@@ -35,7 +35,7 @@ function changeMode() {
         body.classList.remove('dark-mode');
         localStorage.setItem('darkMode', '0');
     } else {
-        // Modo escuro
+        
         document.documentElement.style.setProperty('--color-brand-1', '#9747FF;');
         document.documentElement.style.setProperty('--color-grey-0', '#FDFEFF');
         document.documentElement.style.setProperty('--color-grey-1', '#F8F9FA');
@@ -52,14 +52,14 @@ function changeMode() {
         document.documentElement.style.setProperty('--color-white-fixed', '#ffffff');
         document.getElementById("dark-button").src = "src/assets/svg/sun.svg"
         svgs.forEach(svg => {
-            svg.src = 'src/assets/svg/play-dark.svg'; // Alteração: aplicar a alteração na lista de elementos SVGs
+            svg.src = 'src/assets/svg/play-dark.svg'; 
         });
         body.classList.add('dark-mode');
         localStorage.setItem('darkMode', '1');
     }
 }
 
-// Função que busca o tema preferido no localStorage
+
 function applyDarkModeFromLocalStorage() {
     const darkMode = localStorage.getItem('darkMode');
     const body = document.body;
@@ -71,14 +71,14 @@ function applyDarkModeFromLocalStorage() {
 }
 applyDarkModeFromLocalStorage()
 
-// Função que adiciona a função anterior ao botão de mudar tema no HTML
+
 function addDarkButton() {
     const button = document.querySelector('#dark-button')
     button.addEventListener('click', changeMode)
 }
 addDarkButton()
 
-// Função que cria os botões de gêneros musicais
+
 function renderGenreButtons() {
     const divCheckboxs = document.querySelector("#div-checkboxs");
 
@@ -97,7 +97,7 @@ function renderGenreButtons() {
         divCheckboxs.append(input, label);
     });
 
-    // Adicionar evento de clique em todos os botões, exceto no genreButton_0
+    
     const buttons = document.querySelectorAll('.checkboxs__main');
     buttons.forEach(button => {
         if (button.id !== 'genreButton_0') {
@@ -115,7 +115,7 @@ function renderGenreButtons() {
 }
 renderGenreButtons()
 
-// Função que renderiza os Products na tela
+
 function renderCard(id, price, category, title, band, year, imgAlbum, sound) {
     const ul = document.querySelector('#ul__main')
 
@@ -240,7 +240,7 @@ function renderCard(id, price, category, title, band, year, imgAlbum, sound) {
     ul.appendChild(li);
 }
 
-// Função que renderiza todos os Products na tela
+
 function renderAllProducts(array) {
     const ul = document.getElementById("ul__main");
     ul.innerHTML = "";
@@ -250,7 +250,7 @@ function renderAllProducts(array) {
     });
 }
 
-// Função que filtra os produtos
+
 function filterProducts() {
     const buttons = document.querySelectorAll('.checkboxs__main');
     const range = document.querySelector('#input-range');
@@ -300,7 +300,7 @@ function filterProducts() {
 
         const isAnyCheckboxChecked = Array.from(buttons).some(button => button.checked);
 
-        // Se nenhum checkbox estiver marcado, marcar o genreButton_0
+        
         if (!isAnyCheckboxChecked) {
             const genreButton0 = document.querySelector('#genreButton_0');
             genreButton0.checked = true;
@@ -315,7 +315,7 @@ function filterProducts() {
 }
 filterProducts()
 
-// Função responsável por alterar o valor no HTML com base no Input Range
+
 function changePriceInHTML() {
     const priceHTML = document.querySelector("#price-range");
     const inputRange = document.querySelector("#input-range");
@@ -325,7 +325,7 @@ function changePriceInHTML() {
 }
 changePriceInHTML()
 
-// Função responsável por estilizar o input range
+
 function inputRangeCustomize() {
     const slider = document.getElementById("input-range");
     const start_value = slider.getAttribute("value");

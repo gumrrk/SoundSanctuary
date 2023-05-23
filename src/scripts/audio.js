@@ -13,11 +13,11 @@ function fadeIn(audio) {
 }
 
 function fadeOut(audio) {
-    const fadeDuration = 3000; // Duração do fade out em milissegundos
+    const fadeDuration = 3000; 
     const fadeSteps = 100;
     const fadeDecrement = 1 / fadeSteps;
-    const fadeStart = 17; // Tempo em segundos para iniciar o fade out
-    const fadeEnd = 20; // Tempo em segundos para finalizar o fade out
+    const fadeStart = 17; 
+    const fadeEnd = 20; 
 
     let fadeInterval = setInterval(() => {
         const currentTime = audio.currentTime;
